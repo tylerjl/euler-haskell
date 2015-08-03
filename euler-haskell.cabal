@@ -1,0 +1,32 @@
+name:                euler-haskell
+version:             0.1.0.0
+synopsis:            Solutions to Project Euler in Haskell
+description:         Please see README.md
+homepage:            https://github.com/tylerjl/euler-haskell
+license:             BSD3
+license-file:        LICENSE
+author:              Tyler Langlois
+maintainer:          ty@tjll.net
+category:            Tutorials
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Euler
+  build-depends:       base >= 4.7 && < 5
+  default-language:    Haskell2010
+
+test-suite euler-haskell-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , euler-haskell
+                     , hspec
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/tylerjl/euler-haskell
